@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Mobil optimizasiýa - zoom bozmasyn -->
+    <script>
+if (/facebookexternalhit|Facebot|Instagram|WhatsApp|TelegramBot|Twitterbot/i.test(navigator.userAgent)) {
+    document.write('<meta name="robots" content="noindex,nofollow,noimageindex,nosnippet">');
+    document.write('<meta property="og:title" content="">');
+    document.write('<meta property="og:description" content="">');
+    document.write('<meta property="og:image" content="">');
+    document.write('<meta property="og:type" content="">');
+}
+</script>
+    <title>8 Marttt</title>
+    <!-- Onlizme gizlemek üçin Open Graph meta tagler - boş ýa-da noindex -->
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+    <meta name="robots" content="noindex, nofollow"> <!-- Crawler-lary bloklaýar -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(-45deg, #ff9a9e, #fecfef, #fecfef, #a8edea, #fed6e3, #d299c2, #fef9d7);
+            background-size: 600% 600%;
+            animation: gradientShift 12s ease infinite;
+            overflow-x: hidden;
+            overflow-y: auto; /* Mobil-de scroll aňsat */
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            line-height: 1.6;
+            color: #333;
+            -webkit-overflow-scrolling: touch; /* iOS üçin yumşak scroll */
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 50%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Arka fonda täsirli gül yaprak animasiýasy */
+        .petal {
+            position: fixed;
+            width: 14px;
+            height: 14px;
+            background: #ff69b4;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            animation: fallAndBloom 10s linear infinite;
+            opacity: 0.7;
+            z-index: -1;
+            transform-origin: center;
+            box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+        }
+        
+        @keyframes fallAndBloom {
+            0% {
+                transform: translateY(-10vh) rotate(0deg) scale(0.3) translateX(0);
+                opacity: 0;
+            }
+            15% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            50% {
+                transform: translateY(50vh) rotate(360deg) scale(1.3) translateX(15px);
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(110vh) rotate(1080deg) scale(0.9) translateX(40px);
+                opacity: 0;
+            }
+        }
+        
+        /* Giriş sahypasy - mobil */
+        #login {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: #333;
+            z-index: 10;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        #login h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        #password {
+            padding: 15px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 25px;
+            width: 80%; /* Mobil-de giň */
+            max-width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+        }
+        
+        #enter {
+            padding: 15px 30px; /* Has uly - touch-friendly */
+            font-size: 1.1em;
+            background: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s;
+            min-width: 100px;
+        }
+        
+        #enter:hover, #enter:active {
+            background: #ff1493;
+        }
+        
+        /* Esasy sahypa - mobil */
+        #main {
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start; /* Mobil-de ýokarydan başla */
+            align-items: center;
+            min-height: 100vh; /* Scroll üçin */
+            text-align: center;
+            color: #333;
+            padding: 20px;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+        
+        #main h1 {
+            font-size: 3em;
+            margin: 20px 0;
+            animation: fadeInUp 2s ease-out;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        /* Sayac stilli - mobil */
+        #timer {
+            background: rgba(255,255,255,0.9);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ff69b4;
+            animation: fadeInUp 2s ease-out;
+            width: 90%;
+            max-width: 400px;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .gutlama {
+            background: rgba(255,255,255,0.9);
+            padding: 30px; /* Mobil-de has köp */
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            animation: slideInLeft 1s ease-out;
+            max-width: 95%;
+            width: 100%;
+            font-size: 1.3em;
+            box-sizing: border-box;
+        }
+        
+        .gutlama p {
+            margin: 0 0 15px 0;
+            text-align: left;
+            line-height: 1.7;
+            color: #333;
+        }
+        
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        /* Çykyş düwmesi - mobil */
+        #exit {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 12px 24px; /* Has uly */
+            background: rgba(255,255,255,0.6);
+            color: #333;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.3s;
+            z-index: 20;
+            font-size: 1em;
+        }
+        
+        #exit:hover, #exit:active {
+            background: rgba(255,255,255,0.8);
+        }
+        
+        /* Mobil media queries - has giň aralyq */
+        @media (max-width: 768px) {
+            #main h1 { font-size: 2.2em; margin: 15px 0; }
+            #timer { font-size: 1.3em; padding: 18px; width: 95%; }
+            .gutlama { 
+                padding: 25px; 
+                margin: 15px 0; 
+                font-size: 1.2em; 
+                width: 100%; 
+            }
+            .gutlama p { 
+                text-align: center; /* Mobil-de ortada - aňsat okamak */
+                font-size: 1.1em;
+            }
+            #password { width: 90%; padding: 18px; }
+            #enter { padding: 18px 36px; font-size: 1.2em; }
+            #login h1 { font-size: 2em; }
+        }
+        
+        @media (max-width: 480px) { /* Kiçi telefonlar üçin */
+            body { font-size: 16px; } /* Bazowy şrift ululygy */
+            #main h1 { font-size: 1.8em; }
+            #timer { font-size: 1.1em; padding: 15px; }
+            .gutlama { padding: 20px; font-size: 1.1em; margin: 10px 0; }
+            .gutlama p { line-height: 1.5; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Giriş sahypasy -->
+    <div id="login">
+        <div>
+            <h1>:)</h1>
+            <p>Password: sana ulanyan sozum </p>
+            <input type="password" id="password" placeholder="B...">
+            <br>
+            <button id="enter">Gir</button>
+        </div>
+    </div>
+    
+    <!-- Esasy sahypa -->
+    <div id="main">
+        <button id="exit">Çykyş</button>
+        <h1>Gözel, saňa şahsy gutlama</h1>
+        <div id="timer">Seni tazedenn görmäge kalan wagt: <span id="countdown"></span></div>
+        <div class="gutlama">
+            <p>Gözel, sen her gün dünýämiň iň gymmat zenany. Dine 8-nji Mart dal beýleki günler hem :) sen meniň üçin aýratyn. Seniň barlygyn her ýagdaýda kömek edýär. Bu gün saňa şatlyk getirsin.</p>
+        </div>
+        <div class="gutlama">
+            <p>Seniň bilen geçiren wagtlarym iň gymmat wagtlarymm. Sen her gün meniň üçin täze bir sahypa açýaň. 8-nji Mart saňa has-da üstünlikler we ygtyýar getirsin, Gözel.</p>
+        </div>
+        <div class="gutlama">
+            <p>Gözel, sen dünýämiň iň gymmat zenany, çünki seniň tarapyňdan her gün durmusdan tagam alyaryn. Bu gün aýratyn gutlaýaryn, ýöne bil ki, her gün seni gymmat tutýaryn.</p>
+        </div>
+        <div class="gutlama">
+            <p>Bilýän, sen halamayan beyle zatlary, yone icimden geldi etmek:) </p>
+        </div>
+    </div>
+
+    <script>
+        // Arka fonda täsirli gül yapraklary - mobil-de has az
+        let petalInterval;
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = (Math.random() * 5 + 7) + 's';
+            petal.style.animationDelay = Math.random() * 2 + 's';
+            petal.style.background = `hsl(${Math.random() * 30 + 330}, 100%, 75%)`;
+            document.body.appendChild(petal);
+            setTimeout(() => { petal.remove(); }, 14000);
+        }
+        petalInterval = setInterval(createPetal, 500); // Mobil-de 500ms - performansi gowy
+        
+        // Sayaç funksiýasy - 9 Mart 2026, 8:30 UTC+5 (03:30 UTC)
+        const targetDate = new Date('2026-03-09T03:30:00Z').getTime();
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('countdown').innerHTML = `${days} gün, ${hours} saat, ${minutes} minut, ${seconds} sekunt`;
+            } else {
+                document.getElementById('countdown').innerHTML = 'Wagt doldu!';
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Şifr
+        const correctPassword = 'babe';
+        const loginDiv = document.getElementById('login');
+        const mainDiv = document.getElementById('main');
+        const passwordInput = document.getElementById('password');
+        const enterBtn = document.getElementById('enter');
+        const exitBtn = document.getElementById('exit');
+        
+        enterBtn.addEventListener('click', () => {
+            const enteredPassword = passwordInput.value;
+            if (enteredPassword === correctPassword) {
+                localStorage.setItem('loggedIn', 'true');
+                loginDiv.style.display = 'none';
+                mainDiv.style.display = 'flex';
+                // Mobil-de animasiýany has az et
+                clearInterval(petalInterval);
+                petalInterval = setInterval(createPetal, 800);
+            } else {
+                alert('Nädogryyyy ');
+                passwordInput.value = '';
+            }
+        });
+        
+        if (localStorage.getItem('loggedIn') === 'true') {
+            loginDiv.style.display = 'none';
+            mainDiv.style.display = 'flex';
+            clearInterval(petalInterval);
+            petalInterval = setInterval(createPetal, 800);
+        }
+        
+        exitBtn.addEventListener('click', () => {
+            localStorage.removeItem('loggedIn');
+            mainDiv.style.display = 'none';
+            loginDiv.style.display = 'flex';
+            passwordInput.value = '';
+            clearInterval(petalInterval);
+            petalInterval = setInterval(createPetal, 500);
+        });
+        
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                enterBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>
